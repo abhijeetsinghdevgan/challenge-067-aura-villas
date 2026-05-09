@@ -44,7 +44,7 @@ To view the project locally:
 *(No build process or local server required).*
 
 ## 🔗 Live Demo
-[View Live Demo](#) *(Link will be added upon deployment to GitHub Pages)*
+[View Live Demo](https://abhijeetsinghdevgan.github.io/challenge-067-aura-villas/)
 
 ## 📝 Design Decisions
 
