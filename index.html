@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Villas | Luxury Vacation Rental</title>
+    <meta name="description" content="Book your stay at Aura Villas. Experience unparalleled luxury, stunning ocean views, and world-class amenities in our premium vacation rentals.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">AURA.</div>
+        <div class="nav-links">
+            <a href="#about">The Villa</a>
+            <a href="#suites">Suites</a>
+            <a href="#amenities">Amenities</a>
+        </div>
+        <a href="#book" class="btn btn-primary">Book Now</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-image" style="background-image: url('assets/images/hero.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="animate-up">Escape to Tranquility</h1>
+            <p class="animate-up delay-1">Experience unparalleled luxury on the edge of the world.</p>
+            <div class="hero-actions animate-up delay-2">
+                <a href="#book" class="btn btn-primary btn-large">Reserve Your Stay</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="book" class="booking-section">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h2>Reserve Your Experience</h2>
+                <p>Select your dates and preferences to curate your perfect getaway.</p>
+            </div>
+            
+            <form id="bookingForm" class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkIn">Check-In</label>
+                        <div class="input-icon-wrapper">
+                            <i data-lucide="calendar"></i>
+                            <input type="date" id="checkIn" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOut">Check-Out</label>
+                        <div class="input-icon-wrapper">
+                            <i data-lucide="calendar"></i>
+                            <input type="date" id="checkOut" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <div class="input-icon-wrapper">
+                            <i data-lucide="users"></i>
+                            <select id="guests" required>
+                                <option value="1">1 Adult</option>
+                                <option value="2" selected>2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5">5+ Adults</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="roomType">Suite Type</label>
+                        <div class="input-icon-wrapper">
+                            <i data-lucide="key"></i>
+                            <select id="roomType" required>
+                                <option value="ocean_view" data-price="850">Ocean View Suite ($850/nt)</option>
+                                <option value="presidential" data-price="1500">Presidential Villa ($1500/nt)</option>
+                                <option value="garden" data-price="600">Garden Retreat ($600/nt)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preferences">
+                    <h3>Stay Preferences</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="nonSmoking" checked>
+                        <label for="nonSmoking">Non-smoking room required</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="airportTransfer" value="150">
+                        <label for="airportTransfer">Private Airport Transfer (+$150)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="spaPackage" value="300">
+                        <label for="spaPackage">Couples Spa Package (+$300)</label>
+                    </div>
+                </div>
+
+                <div class="deposit-notice">
+                    <i data-lucide="shield-check"></i>
+                    <div>
+                        <strong>Security Deposit Required</strong>
+                        <p>A fully refundable $500 security deposit will be held upon check-in to cover any incidentals during your stay.</p>
+                    </div>
+                </div>
+
+                <div class="price-summary">
+                    <div class="price-row">
+                        <span>Nights</span>
+                        <span id="nightsCount">0</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Room Subtotal</span>
+                        <span id="roomSubtotal">$0</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Extras</span>
+                        <span id="extrasTotal">$0</span>
+                    </div>
+                    <div class="price-divider"></div>
+                    <div class="price-row total">
+                        <span>Estimated Total</span>
+                        <span id="totalPrice" class="price-value">$0</span>
+                    </div>
+                    <p class="taxes-note">Taxes and fees included</p>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="submitBtn" disabled>Select Dates to Calculate</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="suites" class="split-section">
+        <div class="content-side">
+            <span class="section-tag">Accommodations</span>
+            <h2>Unmatched Elegance</h2>
+            <p>Our suites are designed to provide the ultimate comfort and privacy. Enjoy panoramic views, premium bedding, and a space crafted for your complete relaxation.</p>
+            <ul class="features-list">
+                <li><i data-lucide="wifi"></i> High-speed WiFi</li>
+                <li><i data-lucide="coffee"></i> Nespresso Machine</li>
+                <li><i data-lucide="wind"></i> Climate Control</li>
+                <li><i data-lucide="tv"></i> Smart TV with Streaming</li>
+            </ul>
+        </div>
+        <div class="image-side">
+            <div class="image-wrapper">
+                <img src="assets/images/room.png" alt="Luxury Ocean View Suite">
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="split-section reverse">
+        <div class="content-side">
+            <span class="section-tag">Wellness</span>
+            <h2>Rejuvenation & Serenity</h2>
+            <p>Immerse yourself in our world-class spa facilities. Let our expert therapists guide you on a journey of complete renewal and relaxation in our tranquil tropical setting.</p>
+            <ul class="features-list">
+                <li><i data-lucide="droplets"></i> Heated Infinity Pool</li>
+                <li><i data-lucide="flower-2"></i> Holistic Spa Treatments</li>
+                <li><i data-lucide="dumbbell"></i> Fitness Center</li>
+            </ul>
+        </div>
+        <div class="image-side">
+            <div class="image-wrapper">
+                <img src="assets/images/amenity.png" alt="Luxury Spa and Wellness Center">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">AURA.</div>
+                <p>Elevating the standard of luxury vacation rentals. Experience the extraordinary.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>reservations@auravillas.com</p>
+                <p>+1 (800) 123-4567</p>
+            </div>
+            <div class="footer-col">
+                <h3>Policies</h3>
+                <p><a href="#">Terms of Service</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Cancellation Policy</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Aura Villas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i data-lucide="check-circle"></i>
+            </div>
+            <h2>Reservation Confirmed!</h2>
+            <p>Thank you for choosing Aura Villas. Your booking details have been sent to your email.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Return to Home</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
